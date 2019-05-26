@@ -7,6 +7,6 @@ sep(N,N1) :- N2 is N-N1, prime(N1), prime(N2), write('Output: '), write(N1), wri
 
 find(N,N1) :- sep(N,N1); N2 is N1+1, N2 =< N/2, find(N,N2).
 
-main :- write('Input: '), read(N), find(N,2), true; true.
+main :- write('Input: '), read(N), find(N,2), halt; halt.
 
 :- initialization(main).
