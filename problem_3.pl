@@ -3,7 +3,6 @@ input_edge(E) :- E>0, write('Node A: '), read(A), write('Node B: '), read(B), as
 
 path(A,A,_).
 path(A,B,M) :- edge(A,B); edge(A,C), not(visited(C,M)), assertz(visited(C,M)), path(C,B,M).
-
 start_check_edge(A,B,M) :- assertz(visited(A,M)), path(A,B,M), write('Yes'), nl; write('No'), nl.
 
 queries(0).
